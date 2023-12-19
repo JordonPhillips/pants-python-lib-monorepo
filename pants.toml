@@ -1,0 +1,26 @@
+[GLOBAL]
+pants_version = "2.18.1"
+backend_packages = [
+    "pants.backend.python",
+    "pants.backend.python.lint.black",
+    "pants.backend.python.lint.isort",
+    "pants.backend.python.lint.flake8",
+    "pants.backend.python.typecheck.mypy",
+    "pants.backend.python.lint.pyupgrade",
+    "pants.backend.python.lint.docformatter",
+    "pants.backend.python.lint.bandit",
+]
+
+[source]
+root_patterns = [
+    "/packages"
+]
+
+[python]
+interpreter_constraints = ["CPython>=3.11"]
+
+[bandit]
+args = ["-x tests"]
+
+[flake8]
+args = ["--ignore=E203,E501"]
