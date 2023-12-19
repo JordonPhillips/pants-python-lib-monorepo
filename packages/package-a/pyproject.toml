@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "package_a"
+version = "0.0.1"
+description = "An example package"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.urls]
+source = "https://github.com/JordonPhillips/pants-python-lib-monorepo/packages/package-a"
+
+[tool.setuptools.packages.find]
+exclude=["tests*"]
+
+[tool.isort]
+profile = "black"
+honor_noqa = true
+src_paths = ["package_a", "tests"]
